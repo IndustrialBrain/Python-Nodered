@@ -1,0 +1,111 @@
+[
+    {
+        "id": "47d8cfd1f8e720b1",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b94228911fdeea96",
+        "type": "tcp out",
+        "z": "47d8cfd1f8e720b1",
+        "name": "teste",
+        "host": "",
+        "port": "",
+        "beserver": "reply",
+        "base64": true,
+        "end": false,
+        "tls": "",
+        "x": 570,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "cfd0b87c1a5c5bac",
+        "type": "ui_numeric",
+        "z": "47d8cfd1f8e720b1",
+        "name": "",
+        "label": "Enviar",
+        "tooltip": "",
+        "group": "58a8227c6f0167a8",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1000",
+        "step": 1,
+        "className": "",
+        "x": 270,
+        "y": 120,
+        "wires": [
+            [
+                "b94228911fdeea96"
+            ]
+        ]
+    },
+    {
+        "id": "0dfd1f27b183f365",
+        "type": "tcp in",
+        "z": "47d8cfd1f8e720b1",
+        "name": "",
+        "server": "server",
+        "host": "",
+        "port": "8888",
+        "datamode": "single",
+        "datatype": "utf8",
+        "newline": "",
+        "topic": "",
+        "base64": false,
+        "tls": "",
+        "x": 260,
+        "y": 180,
+        "wires": [
+            [
+                "af9e1164f05752f7"
+            ]
+        ]
+    },
+    {
+        "id": "af9e1164f05752f7",
+        "type": "ui_text",
+        "z": "47d8cfd1f8e720b1",
+        "group": "58a8227c6f0167a8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "text",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 570,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "58a8227c6f0167a8",
+        "type": "ui_group",
+        "name": "Conexão Python TCP",
+        "tab": "94320aeefc386674",
+        "order": 1,
+        "disp": true,
+        "width": "4",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "94320aeefc386674",
+        "type": "ui_tab",
+        "name": "PYTHON_TCP",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
